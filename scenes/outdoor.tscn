@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cubw4iedl4y8y"]
+
+[ext_resource type="Texture2D" uid="uid://rbnjto0x5wao" path="res://backgrounds/BackgroundTest.png" id="1_8celj"]
+[ext_resource type="Script" path="res://scenes/outdoor.gd" id="1_072dc"]
+[ext_resource type="Texture2D" uid="uid://bh68x4vqrqfpp" path="res://sprites/jorrynDino.png" id="2_87f31"]
+[ext_resource type="Script" path="res://scenes/portal.gd" id="3_e66p4"]
+
+[sub_resource type="TileSet" id="TileSet_jwgrb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3j5j"]
+size = Vector2(81, 85)
+
+[node name="outdoor" type="Node2D"]
+script = ExtResource("1_072dc")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(1, 0)
+tile_set = SubResource("TileSet_jwgrb")
+format = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap"]
+position = Vector2(576, 307)
+scale = Vector2(1.12354, 1)
+texture = ExtResource("1_8celj")
+
+[node name="portal" type="Area2D" parent="."]
+script = ExtResource("3_e66p4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
+position = Vector2(1085, 566)
+shape = SubResource("RectangleShape2D_l3j5j")
+debug_color = Color(0.113725, 0.603922, 0.647059, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="portal"]
+position = Vector2(1107, 583)
+scale = Vector2(0.122887, 0.116813)
+texture = ExtResource("2_87f31")
+
+[connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://1af8xcmueooi"]
+
+[ext_resource type="Script" path="res://scenes/marsha.gd" id="1_buuts"]
+[ext_resource type="Texture2D" uid="uid://c22563ofadapx" path="res://sprites/marsha.png" id="1_mowi2"]
+[ext_resource type="AudioStream" uid="uid://ddfdygs2o1l88" path="res://music/marshaSpawn.mp3" id="3_bojxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n757x"]
+size = Vector2(12.4, 14)
+
+[node name="marsha" type="CharacterBody2D"]
+script = ExtResource("1_buuts")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_mowi2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 1)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_n757x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+z_index = 1
+stream = ExtResource("3_bojxh")
+autoplay = true
