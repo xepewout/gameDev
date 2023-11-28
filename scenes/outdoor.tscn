@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://rbnjto0x5wao" path="res://backgrounds/BackgroundTest.png" id="1_8celj"]
 [ext_resource type="Script" path="res://scenes/outdoor.gd" id="1_072dc"]
-[ext_resource type="Texture2D" uid="uid://bh68x4vqrqfpp" path="res://sprites/jorrynDino.png" id="2_87f31"]
 [ext_resource type="Script" path="res://scenes/portal.gd" id="3_e66p4"]
+[ext_resource type="Texture2D" uid="uid://dm2ybcdvkc586" path="res://sprites/Nether_portal_29.png" id="4_uh4nu"]
 
 [sub_resource type="TileSet" id="TileSet_jwgrb"]
 
@@ -33,7 +33,7 @@ debug_color = Color(0.113725, 0.603922, 0.647059, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="portal"]
 position = Vector2(1107, 583)
-scale = Vector2(0.122887, 0.116813)
-texture = ExtResource("2_87f31")
+scale = Vector2(0.183771, 0.121661)
+texture = ExtResource("4_uh4nu")
 
 [connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]

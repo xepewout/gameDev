@@ -10,7 +10,6 @@ var marsha
 var log_scene = preload("res://scenes/log.tscn")
 
 
-
 #called on intialize, adds a log as a child of the parent scene
 #updates player sprite
 func _ready():
@@ -45,6 +44,7 @@ func _physics_process(delta):
 		time_moving_left += delta	
 	
 	#add marsha to scene and not player
+	#marsha doesn't respawn  after the log frees her
 	if time_moving_left >= 2:
 		marsha = marsha_scene.instantiate()
 		get_parent().get_parent().add_child(marsha)
@@ -63,10 +63,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("press_space"):
 		throw_log()
 		
-	if get_slide_collision_count()>0 and get_slide_collision(get_slide_collision_count()-1).get_collider().name == "marsha":
+	
+	if get_slide_collision_count()>0: 
+		#print(get_slide_collision(get_slide_collision_count()-1).get_collider().name) == "marsha":
 		#get_tree().paused = true
 		SceneManager.changeLastScene(get_tree().current_scene.scene_file_path)
-		SceneManager.change_scene("res://scenes/minigame.tscn")
+		#SceneManager.change_scene("res://scenes/minigame.tscn")
 		
 	move_and_slide()
 	

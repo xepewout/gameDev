@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://5u20jutocpau"]
+[gd_scene load_steps=5 format=3 uid="uid://5u20jutocpau"]
 
 [ext_resource type="Script" path="res://scenes/log.gd" id="1_6xemm"]
 [ext_resource type="Texture2D" uid="uid://bqnwy0xr378rl" path="res://sprites/log.png" id="1_837an"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fkkc"]
-size = Vector2(830, 357)
+size = Vector2(855, 410.602)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31slr"]
+size = Vector2(103, 56)
 
 [node name="log" type="Node2D"]
 
@@ -13,12 +16,19 @@ script = ExtResource("1_6xemm")
 
 [node name="Sprite2D" type="Sprite2D" parent="log"]
 z_index = 1
-position = Vector2(653, 260)
+rotation = 0.261799
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_837an")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="log"]
-position = Vector2(653, 263)
-rotation = -0.314159
-scale = Vector2(0.1, 0.1)
+position = Vector2(-1.25, 4)
+scale = Vector2(0.1, 0.097418)
 shape = SubResource("RectangleShape2D_2fkkc")
+
+[node name="Area2D" type="Area2D" parent="log"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="log/Area2D"]
+position = Vector2(-2.5, 3)
+shape = SubResource("RectangleShape2D_31slr")
+
+[connection signal="body_entered" from="log/Area2D" to="log" method="_on_area_2d_body_entered"]
