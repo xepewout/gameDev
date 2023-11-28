@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxkymf73fi5qq"]
+
+[ext_resource type="Script" path="res://gameOver.gd" id="1_ut3kx"]
+
+[node name="gameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ut3kx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.292
+anchor_top = 0.239
+anchor_right = 0.292
+anchor_bottom = 0.239
+offset_left = -95.76
+offset_top = -50.067
+offset_right = 95.24
+offset_bottom = 49.933
+text = "GAME OVER"
+
+[node name="restart" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.424
+anchor_top = 2.445
+anchor_right = -0.424
+anchor_bottom = 2.445
+offset_left = -86.016
+offset_top = -58.5
+offset_right = 85.984
+offset_bottom = 58.5
+text = "RESTART"
+
+[connection signal="pressed" from="Label/restart" to="." method="_on_restart_pressed"]

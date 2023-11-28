@@ -61,7 +61,8 @@ func _physics_process(delta):
 		marshaTime = 0
 		
 	if Input.is_action_just_pressed("press_space"):
-		throw_log()
+		if SceneManager.logs_carried > 0: 
+			throw_log()
 		
 	
 	if get_slide_collision_count()>0: 
@@ -97,9 +98,9 @@ func update_player_sprite():
 			print("0")
 
 func throw_log():
-	var log = log_scene.instantiate()
-	get_parent().add_child(log)
-	log.global_position = (position)
+	var log2 = log_scene.instantiate()
+	get_parent().get_parent().add_child(log2)
+	log2.global_position = (position)
 	SceneManager.lose_log()
 	update_player_sprite()
 		

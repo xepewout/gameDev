@@ -4,6 +4,7 @@ extends CharacterBody2D
 var log_speed = 300.0
 
 
+#logs_carried == 2 is wrong it should keep track of that log being sent out somehow
 func _ready():
 	print("ready")
 	if SceneManager.logs_carried == 2:
@@ -28,17 +29,11 @@ func _physics_process(delta):
 	
 	if get_slide_collision_count()>1 and get_slide_collision(get_slide_collision_count()-1).get_collider().name == "marsha" and log_speed == 0.0:
 		get_slide_collision(get_slide_collision_count()-1).get_collider().queue_free()
-		
-	#if get_slide_collision_count()>0 and get_slide_collision(get_slide_collision_count()-1).get_collider().name == "jorryn":
-		#get_parent().queue_free()
-		#print("hi")
-		#SceneManager.logs_carried += 1
-
-
-
 
 func _on_area_2d_body_entered(body):
 	if body.name== ("jorryn"):
+		SceneManager.logs_carried += 1
+		body.update_player_sprite()
 		get_parent().queue_free()
 
 	pass 

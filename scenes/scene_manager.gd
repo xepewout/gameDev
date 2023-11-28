@@ -11,14 +11,18 @@ func changeLastScene(path_to_last_scene):
 	lastScene = path_to_last_scene
 
 func lose_log():
-	if logs_carried > 0:
+	if logs_carried >= 0:
 		logs_carried -= 1
 		
-	if logs_carried == 0:
-		#logs_carried = 3
+	if logs_carried == -1:
 		print("dead")
+		dead()
 
 func change_speed(speed):
 	player_speed = speed
 
+func dead():
+	lastScene = ("res://scenes/gameOver.tscn")
+	logs_carried = 3
+	#change_scene("res://scenes/gameOver.tscn")
 	

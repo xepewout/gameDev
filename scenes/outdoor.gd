@@ -8,6 +8,4 @@ func _ready():
 	player.position = Vector2(200,200)
 	pass 
 	
-func _process(delta):
-	pass
 	

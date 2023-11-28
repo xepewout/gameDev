@@ -5,7 +5,6 @@ var speed = 500
 
 func _ready():
 	pass # Replace with function body.
-	3
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func body_entered(body):
