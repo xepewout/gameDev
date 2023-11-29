@@ -28,7 +28,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if get_slide_collision_count()>1 and get_slide_collision(get_slide_collision_count()-1).get_collider().name == "marsha" and log_speed == 0.0:
+		print(get_slide_collision(get_slide_collision_count()-1).get_collider())
 		get_slide_collision(get_slide_collision_count()-1).get_collider().queue_free()
+		
 
 func _on_area_2d_body_entered(body):
 	if body.name== ("jorryn"):

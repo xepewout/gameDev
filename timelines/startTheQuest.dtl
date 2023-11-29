@@ -1,0 +1,6 @@
+join momAndDad 1
+momAndDad: Player, you need to deliver the logs to grandpa
+- yes
+	momAndDad: good
+- no
+	momAndDad: not good
