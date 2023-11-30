@@ -41,7 +41,11 @@ func _physics_process(delta):
 		velocity.y= move_toward(velocity.y, 0, SceneManager.player_speed)
 		
 	if velocity.x < 0:
+		$Sprite2D.texture = load("res://sprites/jorrynDino.png")
 		time_moving_left += delta	
+		
+	if velocity.x > 0:
+		$Sprite2D.texture = load("res://sprites/jorrynDinoRight.png")
 	
 	#add marsha to scene and not player
 	#marsha doesn't respawn  after the log frees her
