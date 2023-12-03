@@ -7,8 +7,3 @@ func _ready():
 	self.add_child(player)
 	player.position = Vector2(0,0)
 	pass
-
-
-func _on_area_2d_body_entered(body):
-	SceneManager.change_scene("res://scenes/schoolInterior.tscn")
-	pass # Replace with function body.

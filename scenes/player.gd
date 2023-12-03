@@ -65,7 +65,7 @@ func _physics_process(delta):
 		marshaTime = 0
 		
 	if Input.is_action_just_pressed("press_space"):
-		if SceneManager.logs_carried > 0: 
+		if SceneManager.log_carried == true:
 			throw_log()
 		
 	
@@ -84,28 +84,13 @@ func _physics_process(delta):
 		
 #func: updates player sprite to different logs carried
 func update_player_sprite():
-	match SceneManager.logs_carried:
-		3:
-			$Sprite2D.texture = load("res://sprites/3logs.png")
-			print("3")
-			SceneManager.change_speed(100)
-		2:
-			print(SceneManager.logs_carried)
-			$Sprite2D.texture = load("res://sprites/2logs.png")
-			SceneManager.change_speed(200)
-		1:
-			$Sprite2D.texture = load("res://sprites/1log.png")
-			print("1")
-			SceneManager.change_speed(300)
-		0:
-			$Sprite2D.texture = load("res://sprites/jorrynDino.png")
-			print("0")
+	pass
 
 func throw_log():
 	var log2 = log_scene.instantiate()
+	log2.global_position = (global_position + Vector2(100,0))
 	get_parent().get_parent().add_child(log2)
-	log2.global_position = (position)
-	SceneManager.lose_log()
+	SceneManager.log_carried = false
 	update_player_sprite()
 		
 		

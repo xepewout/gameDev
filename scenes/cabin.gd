@@ -7,5 +7,3 @@ func _ready():
 	player.position = Vector2(300,300)
 	pass
 
-func _process(delta):
-	pass

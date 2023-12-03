@@ -8,7 +8,7 @@ func _ready():
 	await get_tree().create_timer(t).timeout
 	$Sprite2D.texture = load("res://sprites/jorrynDino.png")
 	await get_tree().create_timer(.5).timeout
-	SceneManager.lose_log()
+	SceneManager.lose_life()
 	SceneManager.change_scene(SceneManager.lastScene)
 	
 
@@ -20,7 +20,7 @@ func _process(delta):
 		if time < t:
 			print(time)
 			print(t)
-			SceneManager.lose_log()
+			SceneManager.lose_life()
 			handle_spacebar_press()
 		else: 
 			handle_spacebar_press()
