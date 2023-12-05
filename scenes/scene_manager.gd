@@ -2,8 +2,9 @@ extends Node
 
 var lastScene 
 var log_carried = true
-var player_speed = 100
+var player_speed = 200
 var player_lives = 3
+var log_count = 0
 
 func change_scene(path_to_new_scene):
 	log_carried = true
