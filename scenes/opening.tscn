@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bstaq0iydputg"]
+[gd_scene load_steps=11 format=3 uid="uid://bstaq0iydputg"]
 
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_longi"]
 [ext_resource type="Script" path="res://scenes/opening.gd" id="1_mcs82"]
 [ext_resource type="Script" path="res://scenes/portalToTown.gd" id="3_8h3nt"]
+[ext_resource type="Texture2D" uid="uid://dm2ybcdvkc586" path="res://sprites/Nether_portal_29.png" id="4_ersha"]
 [ext_resource type="Script" path="res://scenes/tree.gd" id="4_xxnrc"]
 [ext_resource type="Texture2D" uid="uid://d1fuwpquwn1y" path="res://sprites/tree.png" id="5_5h1rb"]
 [ext_resource type="Texture2D" uid="uid://6sovpugun3js" path="res://backgrounds/grass.png" id="6_xfvnl"]
@@ -52,11 +53,17 @@ rotation = 1.5708
 shape = SubResource("SegmentShape2D_xcywj")
 
 [node name="portalToTown" type="Area2D" parent="."]
+position = Vector2(4254, -30)
 script = ExtResource("3_8h3nt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalToTown"]
-position = Vector2(4155, -20)
+position = Vector2(-9, 10)
 shape = SubResource("RectangleShape2D_kr38t")
+
+[node name="Sprite2D" type="Sprite2D" parent="portalToTown"]
+position = Vector2(12.0002, -19)
+scale = Vector2(0.631767, 0.394919)
+texture = ExtResource("4_ersha")
 
 [node name="tree" type="Area2D" parent="."]
 position = Vector2(333, 854)
@@ -71,6 +78,7 @@ position = Vector2(57, -7)
 texture = ExtResource("5_5h1rb")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1280, 720)
