@@ -73,9 +73,12 @@ One of the things you can do is go to school and you have a  test and during the
 
 Another one is a bar but you have to move completely left, first you want to take a break so you move a little to the left. When you come out of the hotel a new sign appears that shows a bar to the left, and you can go to it but its a long path. Darts at the bar.
 
+Roji Bakery is in it.
+
 holding logs system:
 3 logs that equal health as well as attack abilities
 The first 3 logs that you get can be placed down and picked up with e. they can be used to block things and projectiles 
+
 
 
 
@@ -86,4 +89,7 @@ piano notes progressing while trumpts also progressing at the same time
 keys drop- walking through a forest
 
 COOL SOUNDS: AUTO LESLIE (epic guitar)
+
+
+LORE: You cut down the world tree which divides the wood into ten divine logs that are spread across the world.
  

@@ -1,5 +1,5 @@
-extends Area2D
+extends Control
 
 
-func _on_body_entered(body):
+func _on_button_pressed():
 	SceneManager.change_scene("res://scenes/opening.tscn")
