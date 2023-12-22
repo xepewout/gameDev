@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxoel2qo7jrvf"]
+
+[ext_resource type="Script" path="res://scenes/door.gd" id="1_lb0uo"]
+[ext_resource type="Texture2D" uid="uid://cojpamvjfdl8j" path="res://sprites/logButton.png" id="2_28bi7"]
+[ext_resource type="Texture2D" uid="uid://b68k0wtpcyatl" path="res://sprites/playerButton.png" id="3_3dwts"]
+[ext_resource type="Texture2D" uid="uid://dgqrvjynwq16q" path="res://sprites/door.png" id="4_5go1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hftxq"]
+size = Vector2(139, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmovv"]
+size = Vector2(51, 57.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3cws"]
+size = Vector2(35, 33.5)
+
+[node name="door" type="Node2D"]
+
+[node name="door" type="StaticBody2D" parent="."]
+position = Vector2(306, -85)
+script = ExtResource("1_lb0uo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(-786, -121)
+shape = SubResource("RectangleShape2D_hftxq")
+
+[node name="button1" type="Area2D" parent="door"]
+position = Vector2(283, -77)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/button1"]
+position = Vector2(-1067, -514)
+shape = SubResource("RectangleShape2D_vmovv")
+
+[node name="Sprite2D" type="Sprite2D" parent="door/button1"]
+position = Vector2(-1068, -508)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_28bi7")
+
+[node name="backButton1" type="Area2D" parent="door"]
+visible = false
+position = Vector2(-284, -199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/backButton1"]
+position = Vector2(-338, 226)
+shape = SubResource("RectangleShape2D_a3cws")
+
+[node name="Sprite2D" type="Sprite2D" parent="door/backButton1"]
+position = Vector2(-336, 226)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_3dwts")
+
+[node name="Sprite2D" type="Sprite2D" parent="door"]
+position = Vector2(-788, -136)
+scale = Vector2(0.588235, 0.4)
+texture = ExtResource("4_5go1f")
+
+[connection signal="body_entered" from="door/button1" to="door" method="_on_button_1_body_entered"]
+[connection signal="body_exited" from="door/button1" to="door" method="_on_button_1_body_exited"]
+[connection signal="body_entered" from="door/backButton1" to="door" method="_on_back_button_1_body_entered"]
+[connection signal="body_exited" from="door/backButton1" to="door" method="_on_back_button_1_body_exited"]
