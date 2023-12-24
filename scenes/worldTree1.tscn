@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://di8lnu1ol7p4"]
+[gd_scene load_steps=25 format=3 uid="uid://di8lnu1ol7p4"]
 
 [ext_resource type="Script" path="res://scenes/worldTree.gd" id="1_w3pkm"]
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="2_amt4a"]
 [ext_resource type="PackedScene" uid="uid://cohp6pj6y7h2s" path="res://scenes/door.tscn" id="3_48wr4"]
 [ext_resource type="PackedScene" uid="uid://dxoel2qo7jrvf" path="res://scenes/doorLog.tscn" id="4_ahtxy"]
+[ext_resource type="Script" path="res://scenes/portalToWorldTree2.gd" id="5_4g30h"]
+[ext_resource type="Texture2D" uid="uid://dm2ybcdvkc586" path="res://sprites/Nether_portal_29.png" id="6_cyuii"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fe355"]
 a = Vector2(0, -76)
@@ -72,6 +74,9 @@ b = Vector2(-153, -51)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_boqdo"]
 a = Vector2(171, -50)
 b = Vector2(168, 349)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v7wx"]
+size = Vector2(226, 93)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w3pkm")
@@ -163,3 +168,18 @@ shape = SubResource("SegmentShape2D_boqdo")
 
 [node name="door2" parent="." instance=ExtResource("4_ahtxy")]
 position = Vector2(-2381, 464)
+
+[node name="portalToWorldTree2" type="Area2D" parent="."]
+position = Vector2(-2880, 485)
+script = ExtResource("5_4g30h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portalToWorldTree2"]
+position = Vector2(60, 3)
+shape = SubResource("RectangleShape2D_7v7wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="portalToWorldTree2"]
+position = Vector2(17.25, 210.25)
+scale = Vector2(0.946656, 0.818129)
+texture = ExtResource("6_cyuii")
+
+[connection signal="body_entered" from="portalToWorldTree2" to="portalToWorldTree2" method="_on_body_entered"]

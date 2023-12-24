@@ -2,4 +2,4 @@ extends Control
 
 
 func _on_button_pressed():
-	SceneManager.change_scene("res://scenes/worldTree.tscn")
+	SceneManager.change_scene("res://scenes/cabin.tscn")
