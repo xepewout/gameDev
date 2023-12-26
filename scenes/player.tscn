@@ -23,4 +23,9 @@ shape = SubResource("RectangleShape2D_ijllb")
 
 [node name="Camera2D" type="Camera2D" parent="jorryn"]
 position = Vector2(10, 1)
+limit_left = -1000
+limit_top = -1000
+limit_right = 1000
+limit_bottom = 1000
+limit_smoothed = true
 editor_draw_drag_margin = true

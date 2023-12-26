@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfn0fr5awbs5p"]
+
+[ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_8wl5g"]
+
+[node name="beach" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_8wl5g")
+format = 2

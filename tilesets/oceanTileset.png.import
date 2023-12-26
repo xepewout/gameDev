@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2qqo2uoh808o"
-path="res://.godot/imported/cabinTileset.png-5213aa166ad01beefbd87f0ca3a9fd2d.ctex"
+uid="uid://dsb12yoskjf06"
+path="res://.godot/imported/oceanTileset.png-b7d4df73623273358561961bddc4fd02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/cabinTileset.png"
-dest_files=["res://.godot/imported/cabinTileset.png-5213aa166ad01beefbd87f0ca3a9fd2d.ctex"]
+source_file="res://tilesets/oceanTileset.png"
+dest_files=["res://.godot/imported/oceanTileset.png-b7d4df73623273358561961bddc4fd02.ctex"]
 
 [params]
 
