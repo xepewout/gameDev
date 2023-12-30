@@ -1,7 +1,6 @@
 # The 10 Logs
 
 # notes TODO: 11/18 figure out how to make scene transitions.
-GET CAR/STUDY.
 
 TODO 11/27: handle log pickups. design school tutorial scene. refine log system. figure out enemies.
 
@@ -30,23 +29,23 @@ believe in yourself
 
 10 alternate paths you can take each of which brings a whole extra layer to the path that you take. adds a whole complex layer. each of these paths gets you a log that unlocks different abilities? different endings?
 
-LOVER - LOVE: 1 path about falling in love - always ends in heartbreak unless you give up the story pink log: be yourself you move at normal speed even with logs. Ending with lover log is the grandpa has a wife.
+Learning Log
+MECHANIC - TRAVEL 1 path about traveling the world - you learn a lot but you have no home
+LOVER - LOVE: 1 path about falling in love - always ends in heartbreak unless you give up the story pink log: be yourself you move at normal speed even with logs. Ending with lover log is the grandpa has a wife. On Love Island
+BOSS - JOB: cut down trees - with ax 1 path about getting a successful job - always ends in being alone - a money system appears when you're in that section of the game and the more trees you cut down the more money you earn. If you get to a certain amount of money the normal section of the game is cut out and the only way back is to buy the log gold log. Then a boss battle appears. He throws coins at you and you have to place logs to block the coins. On Greed Island.
+BARTENDER - VICES: 1 path about giving into vices - you become a shell of yourself
+FRIENDS - FRIENDSHIP: 1 path about friendship - you are happy but not indivdualistic 
+INSPIRATION - ART: 1 path about becoming an artist - you are your worst critic
+CHEF - FOOD: you make food 
 
-BOSS - JOB: cut down trees - with ax 1 path about getting a successful job - always ends in being alone - a money system appears when you're in that section of the game and the more trees you cut down the more money you earn. If you get to a certain amount of money the normal section of the game is cut out and the only way back is to buy the log gold log. Then a boss battle appears. He throws coins at you and you have to place logs to block the coins. 
+Q and E to switch between different logs, space to use the log.
+
 
 1 path about doing whatever you want - you can't reach the ending 
 
-MECHANIC - TRAVEL 1 path about traveling the world - you learn a lot but you have no home
 
-BARTENDER - VICES: 1 path about giving into vices - you become a shell of yourself
 
-FRIENDS - FRIENDSHIP: 1 path about friendship - you are happy but not indivdualistic 
 
-INSPIRATION - ART: 1 path about becoming an artist - you are your worst critic
-
-TEACHER - LEARNING: you can go to school
-
-CHEF - FOOD: you make food 
 
 1 path about creating a game - you are here
 
