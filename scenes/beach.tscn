@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfn0fr5awbs5p"]
+[gd_scene load_steps=3 format=3 uid="uid://dfn0fr5awbs5p"]
 
+[ext_resource type="Script" path="res://scenes/beach.gd" id="1_6ptmt"]
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_8wl5g"]
 
 [node name="beach" type="Node2D"]
+script = ExtResource("1_6ptmt")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_8wl5g")

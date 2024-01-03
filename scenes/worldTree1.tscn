@@ -78,7 +78,7 @@ b = Vector2(168, 349)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v7wx"]
 size = Vector2(226, 93)
 
-[node name="Node2D" type="Node2D"]
+[node name="worldTree1" type="Node2D"]
 script = ExtResource("1_w3pkm")
 
 [node name="TileMap" type="TileMap" parent="."]
