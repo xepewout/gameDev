@@ -29,10 +29,12 @@ visible = false
 position = Vector2(283, -77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door/button1"]
+visible = false
 position = Vector2(-286, 81)
 shape = SubResource("RectangleShape2D_vmovv")
 
 [node name="Sprite2D" type="Sprite2D" parent="door/button1"]
+visible = false
 position = Vector2(-284, 78)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_wa0jr")

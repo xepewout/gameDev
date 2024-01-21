@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8m883vivl60u"]
+[gd_scene load_steps=28 format=3 uid="uid://b8m883vivl60u"]
 
 [ext_resource type="Script" path="res://scenes/schoolInterior.gd" id="1_r14da"]
 [ext_resource type="Texture2D" uid="uid://t6lp542usxoo" path="res://tilesets/schoolCutOut.png" id="2_r5pm8"]
@@ -3361,6 +3361,9 @@ b = Vector2(605, -1128)
 a = Vector2(-544, -1126)
 b = Vector2(612, -1131)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7cty"]
+size = Vector2(113.5, 128.5)
+
 [node name="schoolInterior" type="Node2D"]
 script = ExtResource("1_r14da")
 
@@ -3528,6 +3531,12 @@ shape = SubResource("SegmentShape2D_4k7x1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
 shape = SubResource("SegmentShape2D_iqkbl")
 
+[node name="portalToSchoolYard" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portalToSchoolYard"]
+position = Vector2(101.25, -1047.25)
+shape = SubResource("RectangleShape2D_g7cty")
+
 [connection signal="body_entered" from="door/button1" to="door" method="_on_button_1_body_entered"]
 [connection signal="body_exited" from="door/button1" to="door" method="_on_button_1_body_exited"]
 [connection signal="body_entered" from="door/backButton1" to="door" method="_on_back_button_1_body_entered"]
@@ -3542,3 +3551,4 @@ shape = SubResource("SegmentShape2D_iqkbl")
 [connection signal="body_exited" from="door3/button4" to="door3" method="_on_button_4_body_exited"]
 [connection signal="body_entered" from="door3/backButton3" to="door3" method="_on_back_button_3_body_entered"]
 [connection signal="body_exited" from="door3/backButton3" to="door3" method="_on_back_button_3_body_exited"]
+[connection signal="body_entered" from="portalToSchoolYard" to="." method="_on_portal_to_school_yard_body_entered"]
