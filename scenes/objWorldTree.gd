@@ -16,4 +16,6 @@ func _process(delta):
 	if(inTree and Input.is_action_just_pressed("press_space")):
 		queue_free()
 		SceneManager.log_count += 3
+		SceneManager.treeCut = true
+		Dialogic.VAR.treeCut = true
 	pass

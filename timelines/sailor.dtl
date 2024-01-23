@@ -1,0 +1,5 @@
+join sailor 1
+if {treeCut} == "false":
+	sailor: you need to find the world tree
+if {treeCut} == "true":
+	sailor: I can give you the boat now

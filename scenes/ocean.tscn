@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cywksqcvg7dhe"]
+[gd_scene load_steps=3 format=3 uid="uid://cywksqcvg7dhe"]
 
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_jwt2k"]
+[ext_resource type="Script" path="res://scenes/ocean.gd" id="1_ps326"]
 
 [node name="ocean" type="Node2D"]
+script = ExtResource("1_ps326")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_jwt2k")
