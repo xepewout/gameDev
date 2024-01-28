@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfn0fr5awbs5p"]
+[gd_scene load_steps=13 format=3 uid="uid://dfn0fr5awbs5p"]
 
 [ext_resource type="Script" path="res://scenes/beach.gd" id="1_6ptmt"]
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_8wl5g"]
+[ext_resource type="Script" path="res://scenes/portal to ocean.gd" id="3_17s6y"]
+[ext_resource type="Script" path="res://scenes/sailor.gd" id="4_ab7tr"]
+[ext_resource type="Texture2D" uid="uid://dnbv4prnps1jt" path="res://sprites/sailor.png" id="4_gw0cv"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_arm77"]
 a = Vector2(-516, -80)
@@ -57,8 +60,28 @@ shape = SubResource("SegmentShape2D_n651r")
 [node name="portalBack" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalBack"]
+position = Vector2(-446.5, -70)
+shape = SubResource("RectangleShape2D_emkh5")
+
+[node name="sailor" type="Area2D" parent="."]
+script = ExtResource("4_ab7tr")
+
+[node name="sailorSprite" type="Sprite2D" parent="sailor"]
+position = Vector2(267, 78)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_gw0cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sailor"]
+position = Vector2(267.5, 80.5)
+shape = SubResource("RectangleShape2D_71il3")
+
+[node name="portalBack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portalBack"]
 position = Vector2(-280, -62)
 shape = SubResource("RectangleShape2D_ins0c")
 
 [connection signal="body_entered" from="portal to ocean" to="." method="_on_portal_to_ocean_body_entered"]
 [connection signal="body_entered" from="portalBack" to="." method="_on_portal_back_body_entered"]
+[connection signal="body_entered" from="portalBack" to="." method="_on_portal_back_body_entered"]
+[connection signal="body_entered" from="sailor" to="sailor" method="_on_body_entered"]
