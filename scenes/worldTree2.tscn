@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fy76a0eranj2"]
+[gd_scene load_steps=6 format=3 uid="uid://fy76a0eranj2"]
 
 [ext_resource type="Script" path="res://scenes/worldTree2.gd" id="1_pv283"]
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_y88ax"]
@@ -7,9 +7,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvnjn"]
 size = Vector2(1007, 1009)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcxya"]
-size = Vector2(102, 83)
 
 [node name="worldTree2" type="Node2D"]
 script = ExtResource("1_pv283")
@@ -31,13 +28,5 @@ texture = ExtResource("2_4tb85")
 position = Vector2(14, 1048)
 shape = SubResource("RectangleShape2D_lvnjn")
 
-[node name="portalToOpening" type="Area2D" parent="."]
-position = Vector2(-301, 218)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="portalToOpening"]
-position = Vector2(-1, 55.5)
-shape = SubResource("RectangleShape2D_gcxya")
-
 [connection signal="body_entered" from="objWorldTree" to="objWorldTree" method="_on_body_entered"]
 [connection signal="body_exited" from="objWorldTree" to="objWorldTree" method="_on_body_exited"]
-[connection signal="body_entered" from="portalToOpening" to="." method="_on_portal_to_opening_body_entered"]

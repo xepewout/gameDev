@@ -5,8 +5,6 @@ var log_carried = true
 var player_speed = 400
 var player_lives = 3
 var log_count = 0
-var treeCut = false
-var boat_carried = false
 var spawnPos = Vector2(0, 0)
 
 var current_scene = null
