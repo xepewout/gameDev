@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cetk1mp763y2y" path="res://tilesets/cabinTileset2.png" id="1_5fmyw"]
 [ext_resource type="Script" path="res://scenes/cabin.gd" id="1_vkkx8"]
+[ext_resource type="PackedScene" uid="uid://ct77dx0ph6y16" path="res://scenes/player.tscn" id="2_qjg1r"]
 [ext_resource type="PackedScene" uid="uid://xmgpybllr5sr" path="res://scenes/mom.tscn" id="3_ddl2n"]
-[ext_resource type="Script" path="res://scenes/portalOutside.gd" id="4_rhu5y"]
 [ext_resource type="Texture2D" uid="uid://dm2ybcdvkc586" path="res://sprites/Nether_portal_29.png" id="5_71568"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6ty1"]
@@ -2321,6 +2321,8 @@ size = Vector2(86, 174.25)
 [node name="cabin interior" type="Node2D"]
 script = ExtResource("1_vkkx8")
 
+[node name="player" parent="." instance=ExtResource("2_qjg1r")]
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-50, -11)
 tile_set = SubResource("TileSet_cli5b")
@@ -2359,7 +2361,6 @@ scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_lpria")
 
 [node name="portalOutside" type="Area2D" parent="."]
-script = ExtResource("4_rhu5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalOutside"]
 position = Vector2(1060, 287.875)
@@ -2370,4 +2371,4 @@ position = Vector2(1056, 292)
 scale = Vector2(0.686306, 0.555427)
 texture = ExtResource("5_71568")
 
-[connection signal="body_entered" from="portalOutside" to="portalOutside" method="_on_body_entered"]
+[connection signal="body_entered" from="portalOutside" to="." method="_on_portal_outside_body_entered"]

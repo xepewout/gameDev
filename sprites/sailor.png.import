@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dio342xvoyadu"
-path="res://.godot/imported/tileset.png-eaea6d2a197ba36af44d4127683788c1.ctex"
+uid="uid://hmgl1e8y4sr6"
+path="res://.godot/imported/sailor.png-24a311718356b1825f61b211b3782a73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-eaea6d2a197ba36af44d4127683788c1.ctex"]
+source_file="res://sprites/sailor.png"
+dest_files=["res://.godot/imported/sailor.png-24a311718356b1825f61b211b3782a73.ctex"]
 
 [params]
 

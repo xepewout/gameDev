@@ -44,15 +44,7 @@ Q and E to switch between different logs, space to use the log.
 1 path about doing whatever you want - you can't reach the ending 
 
 
-
-
-
 1 path about creating a game - you are here
-
-
-
-
-
 
 
 THE MAIN PATH: BORN GROW UP WORK EAT LIVE DIE
@@ -78,9 +70,6 @@ holding logs system:
 3 logs that equal health as well as attack abilities
 The first 3 logs that you get can be placed down and picked up with e. they can be used to block things and projectiles 
 
-
-
-
 MUSIC: BASS SOFT ON THE MINI SYNTH
 
 piano notes progressing while trumpts also progressing at the same time
@@ -88,7 +77,6 @@ piano notes progressing while trumpts also progressing at the same time
 keys drop- walking through a forest
 
 COOL SOUNDS: AUTO LESLIE (epic guitar)
-
 
 LORE: You cut down the world tree which divides the wood into ten divine logs that are spread across the world.
  

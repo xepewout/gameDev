@@ -1,14 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bstaq0iydputg"]
+[gd_scene load_steps=15 format=3 uid="uid://bstaq0iydputg"]
 
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_longi"]
 [ext_resource type="Script" path="res://scenes/opening.gd" id="1_mcs82"]
-[ext_resource type="Script" path="res://scenes/portalToTown.gd" id="3_8h3nt"]
 [ext_resource type="Texture2D" uid="uid://dm2ybcdvkc586" path="res://sprites/Nether_portal_29.png" id="4_ersha"]
 [ext_resource type="Script" path="res://scenes/tree.gd" id="4_xxnrc"]
 [ext_resource type="Texture2D" uid="uid://d1fuwpquwn1y" path="res://sprites/tree.png" id="5_5h1rb"]
-[ext_resource type="Texture2D" uid="uid://6sovpugun3js" path="res://backgrounds/grass.png" id="6_xfvnl"]
-[ext_resource type="Script" path="res://scenes/portalToWorldTree.gd" id="8_obktl"]
-[ext_resource type="Script" path="res://scenes/portalToBeach.gd" id="9_bqo41"]
+[ext_resource type="PackedScene" uid="uid://ct77dx0ph6y16" path="res://scenes/player.tscn" id="6_fly33"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_g00mk"]
 a = Vector2(1464, 23)
@@ -41,6 +38,8 @@ size = Vector2(171, 89)
 [node name="opening" type="Node2D"]
 script = ExtResource("1_mcs82")
 
+[node name="player" parent="." instance=ExtResource("6_fly33")]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_longi")
 format = 2
@@ -69,7 +68,6 @@ shape = SubResource("SegmentShape2D_bsnbs")
 
 [node name="portalToTown" type="Area2D" parent="."]
 position = Vector2(2502, 3)
-script = ExtResource("3_8h3nt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalToTown"]
 position = Vector2(-156, 15)
@@ -92,18 +90,8 @@ shape = SubResource("RectangleShape2D_aco43")
 position = Vector2(94, -10)
 texture = ExtResource("5_5h1rb")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1280, 720)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("6_xfvnl")
-
 [node name="portalToWorldTree" type="Area2D" parent="."]
 position = Vector2(1453, 927)
-script = ExtResource("8_obktl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalToWorldTree"]
 position = Vector2(-6.5, -53.5)
@@ -111,7 +99,6 @@ shape = SubResource("RectangleShape2D_uqbx1")
 
 [node name="portalToBeach" type="Area2D" parent="."]
 position = Vector2(944, 966)
-script = ExtResource("9_bqo41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalToBeach"]
 position = Vector2(24.5, -39.5)
@@ -119,15 +106,14 @@ shape = SubResource("RectangleShape2D_2c6fy")
 
 [node name="portalToBeach2" type="Area2D" parent="."]
 position = Vector2(138, 979)
-script = ExtResource("9_bqo41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalToBeach2"]
 position = Vector2(24.5, -41)
 shape = SubResource("RectangleShape2D_2c6fy")
 
-[connection signal="body_entered" from="portalToTown" to="portalToTown" method="_on_body_entered"]
+[connection signal="body_entered" from="portalToTown" to="." method="_on_portal_to_town_body_entered"]
 [connection signal="body_entered" from="tree" to="tree" method="_on_body_entered"]
 [connection signal="body_exited" from="tree" to="tree" method="_on_body_exited"]
-[connection signal="body_entered" from="portalToWorldTree" to="portalToWorldTree" method="_on_body_entered"]
-[connection signal="body_entered" from="portalToBeach" to="portalToBeach" method="_on_body_entered"]
-[connection signal="body_entered" from="portalToBeach2" to="portalToBeach2" method="_on_body_entered"]
+[connection signal="body_entered" from="portalToWorldTree" to="." method="_on_portal_to_world_tree_body_entered"]
+[connection signal="body_entered" from="portalToBeach" to="." method="_on_portal_to_beach_body_entered"]
+[connection signal="body_entered" from="portalToBeach2" to="." method="_on_portal_to_beach_2_body_entered"]

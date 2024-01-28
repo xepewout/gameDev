@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scenes/beach.gd" id="1_6ptmt"]
 [ext_resource type="TileSet" uid="uid://ch7bso8j88dmh" path="res://tilesets/forest.tres" id="1_8wl5g"]
-[ext_resource type="Script" path="res://scenes/portal to ocean.gd" id="3_17s6y"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_arm77"]
 a = Vector2(-516, -80)
@@ -23,6 +22,9 @@ b = Vector2(575, -84)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_n651r"]
 a = Vector2(-544.75, 131)
 b = Vector2(543.25, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ins0c"]
+size = Vector2(150, 36)
 
 [node name="beach" type="Node2D"]
 script = ExtResource("1_6ptmt")
@@ -47,10 +49,16 @@ shape = SubResource("SegmentShape2D_vlhw0")
 shape = SubResource("SegmentShape2D_nj5gw")
 
 [node name="portal to ocean" type="Area2D" parent="."]
-script = ExtResource("3_17s6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal to ocean"]
 position = Vector2(32.75, 662)
 shape = SubResource("SegmentShape2D_n651r")
 
-[connection signal="body_entered" from="portal to ocean" to="portal to ocean" method="_on_body_entered"]
+[node name="portalBack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portalBack"]
+position = Vector2(-280, -62)
+shape = SubResource("RectangleShape2D_ins0c")
+
+[connection signal="body_entered" from="portal to ocean" to="." method="_on_portal_to_ocean_body_entered"]
+[connection signal="body_entered" from="portalBack" to="." method="_on_portal_back_body_entered"]
