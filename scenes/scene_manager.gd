@@ -7,12 +7,15 @@ var player_lives = 3
 var log_count = 0
 var spawnPos = Vector2(0, 0)
 
+
 var current_scene = null
 
+
+	
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
-
+	
 func change_scene(path_to_new_scene):
 	log_carried = true
 	call_deferred("_deferred_goto_scene", path_to_new_scene)

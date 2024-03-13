@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bh68x4vqrqfpp" path="res://sprites/jorrynDino.png" id="2_0vqub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijllb"]
-size = Vector2(62, 99)
+size = Vector2(36, 54)
 
 [node name="player" type="Node2D"]
 
@@ -14,15 +14,16 @@ script = ExtResource("1_vgck4")
 [node name="Sprite2D" type="Sprite2D" parent="jorryn"]
 z_index = 1
 y_sort_enabled = true
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_0vqub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jorryn"]
-position = Vector2(3, -1.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ijllb")
 
 [node name="Camera2D" type="Camera2D" parent="jorryn"]
 position = Vector2(10, 1)
+zoom = Vector2(1.25, 1.25)
 limit_left = -10000
 limit_top = -10000
 limit_right = 5000
